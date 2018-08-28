@@ -1,0 +1,43 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="userControl"
+	mc:Ignorable="d"
+	x:Class="Run21.BonusRoundControl"
+	d:DesignWidth="400" d:DesignHeight="50">
+	<UserControl.Resources>
+		<Storyboard x:Name="RideUp">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.GlobalOffsetY)" Storyboard.TargetName="userControl">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-60"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3.6" Value="-60"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:4.6" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+	<UserControl.Projection>
+		<PlaneProjection/>
+	</UserControl.Projection>
+
+	<Grid x:Name="LayoutRoot" Background="Black" Margin="0,0,0,-40">
+		<StackPanel Orientation="Horizontal">
+			
+		
+        <StackPanel Margin="10,0,0,0">
+		<TextBlock Name="descriptionText"  TextWrapping="Wrap" Text="4 or more 21's..." Foreground="White"></TextBlock>
+		<TextBlock Name="rewardText" TextWrapping="Wrap" Text="Bonus Round" Foreground="White"/>
+        </StackPanel>
+		<StackPanel Orientation="Horizontal">
+			<Image Name="firstImage" Source="/Run21;component/images/cherry.png" Margin="0,0,0,38" Width="58" />
+			<Image Name="secondImage" Source="/Run21;component/images/cherry.png" Margin="0,0,0,38" Width="58"/>
+			<Image Name="thirdImage" Source="/Run21;component/images/cherry.png" Margin="0,0,0,38" Width="58"/>
+			
+		</StackPanel >
+            <StackPanel Orientation="Horizontal" Name="showSpeedBonusPanel" Margin="10,0,0,0">
+                <TextBlock Text="Speed Bonus! +10pts" Foreground="White" Margin="0,20,0,0" />
+                <TextBlock Name="speedBonus"/>
+                <Image Height="38" Width="50" Margin="0,0,0,38" Source="/Run21;component/images/time32.png"/>
+            </StackPanel>
+		</StackPanel>
+    </Grid>
+</UserControl>

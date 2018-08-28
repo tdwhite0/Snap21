@@ -1,0 +1,33 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="userControl"
+	mc:Ignorable="d"
+	x:Class="Run21.HowToPlayToast"
+	d:DesignWidth="400" d:DesignHeight="50">
+	<UserControl.Resources>
+		<Storyboard x:Name="RideUp">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.GlobalOffsetY)" Storyboard.TargetName="userControl">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-60"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:6.6" Value="-60"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:7.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+	<UserControl.Projection>
+		<PlaneProjection/>
+	</UserControl.Projection>
+
+	<Grid x:Name="LayoutRoot" Background="Black" Margin="0,0,0,-40">
+		<StackPanel Orientation="Horizontal">
+			
+		
+        <StackPanel>
+		<TextBlock  TextWrapping="Wrap" Text="Tap the columns to place cards.  4 or more 21's receives a bonus round." Foreground="White"></TextBlock>
+		
+        </StackPanel>
+		
+		</StackPanel>
+    </Grid>
+</UserControl>

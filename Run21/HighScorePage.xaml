@@ -1,0 +1,68 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Run21.HighScorePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d" d:DesignHeight="480" d:DesignWidth="728"
+    shell:SystemTray.IsVisible="True">
+
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+      
+        <Image Source="/Run21;component/images/highscores_dark.png" Name="backgroundimage" />
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="SNAP 21" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="high scores" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Margin="12,139,12,0">
+            <Grid>
+                <StackPanel>
+                <TextBlock Name="messageText" Text="" />
+                <ListBox x:Name="listBox" Height="256">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="10" >
+                                <TextBlock Text="{Binding Initials}"/>
+                                <TextBlock Text="{Binding Score}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                        
+                  
+                <Button Style="{StaticResource GreenStyle}" Name="clearButton" Content="Clear Scores" Click="clearButton_Click" Foreground="White" />
+                <Button Content="New Game" Name="newGameButton" Click="newGameButton_Click" Style="{StaticResource GreenStyle}" Foreground="White" />
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid VerticalAlignment="Bottom" Height="42"></Grid>
+
+        </Grid>
+    </Grid>
+    
+    
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

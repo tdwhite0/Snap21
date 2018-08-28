@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Run21.UserControls.HolderControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              xmlns:custom="clr-namespace:Run21.UserControls"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="141" d:DesignWidth="101" BorderBrush="White" BorderThickness="5">
+
+    <Border BorderBrush="White" BorderThickness="3">
+        <Grid x:Name="LayoutRoot" Background="Transparent">
+            <Grid>
+                <StackPanel>
+                    
+               
+                <TextBlock Foreground="White"  Text="Discard" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Foreground="White"  Text="3" FontSize="72" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"></TextBlock>
+                </StackPanel>
+            </Grid>
+            <Grid x:Name="firstCardHolder" >
+                
+            </Grid>
+            <Grid x:Name="secondCardHolder" Margin="15,0,0,0">
+                
+            </Grid>
+            <Grid x:Name="thirdCardHolder" Margin="30,0,0,0">
+                
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
